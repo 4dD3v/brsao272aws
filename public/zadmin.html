@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel do Instrutor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body style="background: #f8fafc;">
+  <header class="header"><div class="header-inner" style="max-width: 1000px;"><span class="logo-title">Painel do Instrutor</span></div></header>
+  <main class="main" style="max-width: 1000px;">
+    <div class="home-card" style="max-width: 100%; text-align: left; padding: 30px;">
+      
+      <div id="setupSection">
+        <h2 style="margin-bottom: 20px; color:#0f172a;">Configurar Nova Sala</h2>
+        <div style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
+          <div style="flex: 2; min-width: 250px;">
+             <label class="option-label" style="display:block; margin-bottom: 8px;">Nome da Turma</label>
+             <input type="text" id="adminRoomName" class="form-input" placeholder="Ex: Turma AWS" />
+          </div>
+          <div style="flex: 1; min-width: 150px;">
+             <label class="option-label" style="display:block; margin-bottom: 8px;">Qtd. de Questões (Máx: 359)</label>
+             <input type="number" id="adminQtd" class="form-input" value="30" min="1" max="359" />
+          </div>
+          <div style="display: flex; align-items: flex-end;">
+             <button class="btn-start" id="btnCreateRoom" style="width: auto; padding: 15px 30px;">Abrir Sala</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="activeRoomSection" class="hidden">
+        <div style="background: #e2e8f0; padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px;">
+          <p style="font-size: 16px; font-weight: 600; color: #475569;">PEÇA PARA OS ALUNOS ENTRAREM COM O CÓDIGO:</p>
+          <h1 id="displayRoomCode" style="font-size: 64px; letter-spacing: 10px; color: #0f172a; margin: 0;"></h1>
+        </div>
+        
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px;">
+          <h3 style="color:#0f172a; margin: 0;" id="statusText">Alunos na sala: <span id="waitingCount">0</span></h3>
+          <div style="display: flex; gap: 10px;">
+            <button class="btn-start" id="btnStartQuiz" style="width: auto; padding: 15px 30px; background: #22c55e; box-shadow: none;">🚀 INICIAR PROVA</button>
+            <button class="btn-start" id="btnEndRoom" style="width: auto; padding: 15px 30px; background: #ef4444; box-shadow: none;">🛑 ENCERRAR SALA</button>
+            <button class="btn-start hidden" id="btnNewRoom" style="width: auto; padding: 15px 30px; background: #3b82f6; box-shadow: none;">➕ NOVA SALA</button>
+          </div>
+        </div>
+
+        <h3 style="margin-top: 40px; margin-bottom: 15px; color:#0f172a;">Resultados (Ao Vivo)</h3>
+        <table class="admin-table" style="width: 100%;">
+          <thead><tr><th>Aluno</th><th>Status</th><th>Acertos</th><th>Nota (%)</th></tr></thead>
+          <tbody id="resultsTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+  <script src="admin.js"></script>
+</body>
+</html>

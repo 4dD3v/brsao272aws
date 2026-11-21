@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+:root {
+    --color-red: #E21B3C;
+    --color-blue: #1368CE;
+    --color-yellow: #D89E00;
+    --color-green: #26890C;
+    
+    --bg-page: #F2F2F2;
+    --bg-card: #FFFFFF;
+    --text-main: #333333;
+    --text-muted: #666666;
+    --border-color: #E2E8F0;
+    --accent: #4F46E5;
+    
+    --shadow-soft: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+    --shadow-btn: 0 4px 0 rgba(0, 0, 0, 0.2);
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --transition: 0.2s ease-in-out;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-page);
+    color: var(--text-main);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.header {
+    background: var(--bg-card);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--text-main);
+    letter-spacing: -0.5px;
+}
+
+.main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    padding: 40px;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    line-height: 1.2;
+    margin-bottom: 16px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.home-title { font-size: 32px; color: var(--text-main); }
+.home-desc { font-size: 16px; color: var(--text-muted); margin-bottom: 30px; }
+
+.option-group { margin-bottom: 20px; text-align: left; }
+
+.form-input {
+    width: 100%;
+    padding: 16px 20px;
+    border-radius: var(--radius-md);
+    border: 2px solid var(--border-color);
+    background: #F8FAFC;
+    color: var(--text-main);
+    font-size: 16px;
+    font-weight: 600;
+    outline: none;
+    transition: var(--transition);
+}
+
+.form-input:focus {
+    border-color: var(--accent);
+    background: #FFFFFF;
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+}
+
+.btn-start, .btn-nav {
+    width: 100%;
+    padding: 18px 24px;
+    background: var(--accent);
+    color: #FFFFFF;
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 4px 14px rgba(79, 70, 229, 0.3);
+}
+
+.btn-start:hover, .btn-nav:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
+    background: #4338CA;
+}
+
+.btn-start:disabled {
+    background: #9CA3AF;
+    box-shadow: none;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.student-body {
+    background-color: #F2F2F2;
+}
+
+.kahoot-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 70vh;
+}
+
+.kahoot-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px;
+}
+
+.kahoot-progress {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-muted);
+    background: #E2E8F0;
+    padding: 6px 16px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.kahoot-question {
+    font-size: clamp(24px, 5vw, 40px);
+    font-weight: 800;
+    color: var(--text-main);
+}
+
+/* Grid das Cores */
+.kahoot-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    width: 100%;
+}
+
+.kahoot-btn {
+    border: none;
+    border-radius: var(--radius-md);
+    padding: 30px;
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-btn);
+    transition: transform 0.1s, box-shadow 0.1s, opacity 0.2s;
+    user-select: none;
+}
+
+.kahoot-btn:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.2);
+}
+
+.kahoot-btn:hover {
+    opacity: 0.9;
+}
+
+.kahoot-btn.selected {
+    outline: 5px solid var(--text-main);
+    outline-offset: -5px;
+    transform: scale(0.98);
+}
+
+.color-0 { background-color: var(--color-red); }
+.color-1 { background-color: var(--color-blue); }
+.color-2 { background-color: var(--color-yellow); }
+.color-3 { background-color: var(--color-green); }
+
+@media (max-width: 768px) {
+    .kahoot-grid {
+        grid-template-columns: 1fr;
+    }
+    .kahoot-btn {
+        min-height: 100px;
+        font-size: 18px;
+        padding: 20px;
+    }
+    .home-card {
+        padding: 30px 20px;
+    }
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #FFFFFF;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.admin-table th {
+    background: #F8FAFC;
+    padding: 16px;
+    font-weight: 700;
+    color: var(--text-muted);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.admin-table td {
+    padding: 16px;
+    font-size: 15px;
+    color: var(--text-main);
+    border-bottom: 1px solid var(--border-color);
+    font-weight: 500;
+}
+
+.admin-table tr:last-child td {
+    border-bottom: none;
+}
+
+.admin-table tr:hover td {
+    background: #F1F5F9;
+}
+
+.loader {
+    border: 6px solid #F3F4F6;
+    border-top: 6px solid var(--accent);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
