@@ -1,4 +1,4 @@
-# Simulado Unificado (BRSAO272AWS)
+# Simulado Unificado (BRSAO272AWS) - baseado em https://github.com/rafasantosbzr/Banco-de-Questoes-CLF-C02
 
 Aplicação web full-stack desenvolvida para a realização de simulados interativos e gerenciamento de salas/questões em tempo real.
 
